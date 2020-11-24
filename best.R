@@ -9,10 +9,11 @@ best <- function(state, outcome) {
     }
     
     des<-c("heart attack", "heart failure","pneumonia")
-    c<-sapply(des, function(x)x==outcome)
-    if(sum(c)==0){
+    v<-sapply(des, function(x)x==outcome)
+    if(sum(v)==0){
         return(stop(geterrmessage="invalid outcome"))
     }
+    print("Good!")
     ## Check that state and outcome are valid
     ## Return hospital name in that state with lowest 30-day death
     ## rate
